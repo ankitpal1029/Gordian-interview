@@ -29,21 +29,20 @@ router.post('/logout',function(req,res){
         if(err){
             console.log(`there was some error with logging out`);
 
-            return res.status(401).send({ loggedout: 'false' });
+            return res.status(401).send({ loggedout: false });
         }
 
         res.clearCookie('sid');
-        return res.status(200).send({ loggedout: 'true' });
+        return res.status(200).send({ loggedout: true });
     })
 });
 
-router.get('/home',function(req,res){
+router.get('/isAuthenticated',function(req,res){
     if(req.session.userId){
-        res.send(`you is authenticated`);
+        res.json({ isLoggedIn: true })
     }else{
-        return res.send(`denied`);
+        res.json({ isLoggedIn: false })
     }
-    console.log('henlo');
 
 })
 
