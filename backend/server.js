@@ -4,8 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
-const RedisStore = require('connect-redis')(session);
-const redis = require('redis').createClient();
+//const RedisStore = require('connect-redis')(session);
+//const redis = require('redis').createClient();
 
 
 const {
@@ -27,11 +27,6 @@ app.use(cookieParser('secret'));
 
 
 app.use(session({
-    store: new RedisStore({
-        host: 'localhost',
-        port: 6379,
-        client: redis
-    }),
     secret: SESSION_SECRET,
     saveUninitialized:false,
     resave: false,
