@@ -1,0 +1,51 @@
+.forum-shift-down{
+    margin-top: 5%;
+}
+
+.whiteheader{
+    background-color: white;
+    color: black;
+    border-bottom: black;
+}
+
+
+.btn{
+    margin-right: 5px;
+}
+
+
+.border{
+    outline: 1px blue;
+}
+
+.question-down{
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.underText{
+    color: grey;
+    font-size: 1em;
+}
+
+.underline{
+    border-bottom: 1px solid grey;
+    text-align: left;
+}
+
+.out{
+    text-align: left;
+    outline: 1px solid orange;
+}
+
+.flexcontainer{
+    display: flex;
+}
+.textcontainer{
+    padding-top: 6em;
+}
+
+.highlight{
+    border-bottom: 1px solid lightgray;
+}
+
