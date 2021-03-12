@@ -6,11 +6,13 @@ const Footer= () => {
 
 
     return (
-        <main>
+        <body>
+            <main>
+            </main>
                      <footer className="page-footer grey darken-4">
                           <div className="container">
                             <div className="row">
-                              <div className="col l4 offset-l2 s4">
+                              <div className="col l4 s4">
                                 <h5 className="white-text">Stack Overflow</h5>
                                 <ul>
                                   <li><a className="grey-text text-lighten-3" href="#!">Question</a></li>
@@ -19,7 +21,7 @@ const Footer= () => {
                                 </ul>
                               </div>
 
-                              <div className="col l4 offset-l2 s4">
+                              <div className="col l4 s4">
                                 <h5 className="white-text">Products</h5>
                                 <ul>
                                   <li><a className="grey-text text-lighten-3" href="#!">Teams</a></li>
@@ -29,7 +31,7 @@ const Footer= () => {
                                 </ul>
                               </div>
 
-                              <div className="col l4 offset-l2 s4">
+                              <div className="col l4 s4">
                                 <h5 className="white-text">Company</h5>
                                 <ul>
                                   <li><a className="grey-text text-lighten-3" href="#!">About</a></li>
@@ -47,7 +49,7 @@ const Footer= () => {
                             </div>
                           </div>
                         </footer>
-        </main>
+        </body>
 
 
     )

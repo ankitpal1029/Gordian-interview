@@ -6,3 +6,9 @@
  main {
      flex: 1 0 auto;
  }
+
+ .page-footer{
+   background-color: white;
+   color: white;
+   text-align: center;
+}
