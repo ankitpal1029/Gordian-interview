@@ -4,7 +4,7 @@ https://stackoverflow.com/questions/7616294/force-vim-background-to-black
 
 ### This site is hosted on 
 
-https://vigorous-cori-51c18f.netlify.app/
+https://gordian-interview.netlify.app/
 
 ### the heroku app is hosted on:
 
