@@ -10,7 +10,9 @@ https://gordian-interview.netlify.app/
 
 https://gordianinterview.herokuapp.com
 
-
+Login using :
+username: ankit
+password: pal
 
 
 ![Check out the demo](videos/frontend.gif)
