@@ -1,4 +1,5 @@
 import BlueTags from '../bluetags/bluetags.component';
+import Comments from '../comments/comments.component';
 import NormalText from '../normaltext/normaltext.component';
 import ShadedText from '../shadedtext/shadedtext.component';
 import Tags from '../tags/tags.component';
@@ -6,29 +7,39 @@ import arrowUp from './images/arrowUp.png';
 import './response.component.css'
 
 
-const Response= () => {
+const Response= (props) => {
 
 
 
+    
 
 
     return (
-                    <div className="row">
+                    <div className="row addBorder">
                         <div className="col s2">
                             <img width={50} src={arrowUp} className="center-align"></img>
-                            <h5 className="left-align"> 5</h5>
+                            <h5 className="left-align">{props.upvotes}</h5>
                             <img width={50} src={arrowUp} className="rotate90 center-align"></img>
                         </div>
 
                         <div className="col s10 addPadding">
-                            <NormalText text={`Is there any way, in my vimrc,
-                            to override the background setting of my colorscheme 
-                            and force it to black? I'm looking for something like`}/>
-                            <ShadedText/>
-                            <NormalText text={`so that whatever scheme I select, 
-                                the background gets forced to black.`}/>
-                            <BlueTags tags={[`vim`,`colorscheme`]}/>
+                            { props.info.map((i,index) => {
+                                    if(index === props.shadedIndice){
+                                    return <ShadedText text={i}/>
+                                } else{
+                                    return <NormalText text={i}/>
+                                }
+
+                            }) 
+                            }
+                            {props.mainQuestion &&
+                            <BlueTags tags={props.tags}/>
+                            }
                             <Tags/>
+                            <Comments/>
+                            
+
+                            
                         </div>
                     </div>
 

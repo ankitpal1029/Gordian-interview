@@ -5,3 +5,8 @@
 .addPadding{
     margin-top: 10px;
 }
+
+
+.addBorder{
+    border-bottom: 1px solid lightgrey;
+}
