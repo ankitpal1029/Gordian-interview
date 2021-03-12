@@ -1,8 +1,11 @@
+import { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import Response from '../../components/response/response.component';
 import './forum.page.css';
 
 
 const Forum= () => {
+    const [ loggedIn, setLoggedIn ] = useState(window.localStorage.getItem('loggedin'));
 
 
     const tags = [
@@ -42,6 +45,8 @@ const upvotes = [
 
 
     return (
+        <div>
+            {loggedIn=== 'true'?
 
         <div className="container ">
             <div className="flexcontaier">
@@ -64,8 +69,10 @@ const upvotes = [
                     return <Response key={ index } info={i} shadedIndice={1} tags={tags} mainQuestion={false} upvotes={upvotes[index]}/>
                 }
             }) }
+        </div>: 
+            <Redirect to="/signin" />
 
-
+            }
 
         </div>
     )

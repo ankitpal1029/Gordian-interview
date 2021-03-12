@@ -14,19 +14,25 @@ const SignIn = () => {
 
     function submitHandler (e){
         e.preventDefault();
-        axios.post('http://localhost:4000/login',{
+        //axios.post('http://localhost:4000/login',{
+        axios.post('https://gordianinterview.herokuapp.com/login',{
             username: username,
             password: password
 
         }).then((response) => {
-            console.log(response);
-        },(error) => {
-            console.log(error)
-        })
-
+            console.log(response.loggedin);
         window.localStorage.setItem('loggedin', true);
 
         history.push('/forum');
+        },(error) => {
+            console.log(error.response.status)
+            if( error.response.status === 401 ){
+                console.log('login error');
+                setLoginFail(true);
+
+            }
+        })
+
 
 
 

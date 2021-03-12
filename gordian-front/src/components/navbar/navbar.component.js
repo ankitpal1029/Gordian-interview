@@ -19,7 +19,9 @@ const NavBar = () => {
     })
 
     function logoutHandler(){
-        axios.post('http://localhost:4000/logout')
+        //axios.post('http://localhost:4000/logout')
+        
+        axios.post('https://gordianinterview.herokuapp.com/logout')
             .then((response) => {
                 console.log(response);
             },(error) => {
