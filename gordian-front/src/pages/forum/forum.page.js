@@ -59,9 +59,9 @@ const upvotes = [
 
             { info.map((i,index) => {
                     if(index === 0){
-                    return <Response info={i} shadedIndice={1} tags={tags} mainQuestion={true} upvotes={upvotes[index]}/>
+                    return <Response key={index} info={i} shadedIndice={1} tags={tags} mainQuestion={true} upvotes={upvotes[index]}/>
                 } else{
-                    return <Response info={i} shadedIndice={1} tags={tags} mainQuestion={false} upvotes={upvotes[index]}/>
+                    return <Response key={ index } info={i} shadedIndice={1} tags={tags} mainQuestion={false} upvotes={upvotes[index]}/>
                 }
             }) }
 

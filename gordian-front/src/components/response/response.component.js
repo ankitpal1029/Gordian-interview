@@ -25,9 +25,9 @@ const Response= (props) => {
                         <div className="col s10 addPadding">
                             { props.info.map((i,index) => {
                                     if(index === props.shadedIndice){
-                                    return <ShadedText text={i}/>
+                                    return <ShadedText key={index} text={i}/>
                                 } else{
-                                    return <NormalText text={i}/>
+                                    return <NormalText key={index} text={i}/>
                                 }
 
                             }) 

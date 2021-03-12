@@ -9,9 +9,9 @@ const ShadedText= (props) => {
 
     return (
                     <div className="shadedgray addMargin">
-                        { props.text.map((t) => {
+                        { props.text.map((t,index) => {
 
-                                return <NormalText text={t}/>
+                                return <NormalText key={index} text={t}/>
                         }
                         ) }
 

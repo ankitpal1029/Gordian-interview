@@ -3,6 +3,9 @@ const session = require('express-session');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
+const cookieParser = require('cookie-parser');
+const RedisStore = require('connect-redis')(session);
+const redis = require('redis').createClient();
 
 
 const {
@@ -19,14 +22,21 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors({ origin: 'http://localhost:3000',
                 credentials:true}));
+app.use(cookieParser('secret'));
 
 
 
 app.use(session({
+    store: new RedisStore({
+        host: 'localhost',
+        port: 6379,
+        client: redis
+    }),
     secret: SESSION_SECRET,
-    saveUninitialized:true,
+    saveUninitialized:false,
     resave: false,
     cookie: {
+        secure: false,
         httpOnly: true,
         maxAge: parseInt(3600000),
 
